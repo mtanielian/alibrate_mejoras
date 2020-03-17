@@ -31,7 +31,7 @@
                
                 <div class="btn-group">
                     <button type="button" class="btn btn-secondary" style="font-size:12px;font-weight:bold">
-                        {{lblBookStatus[book.libraryItem.status]}}
+                        {{getBookStatus(book.libraryItem.status)}}
                     </button>
                     <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
                         <span class="sr-only">Libro por leer {{book.title}} </span>
@@ -58,12 +58,6 @@ export default {
     props : ['ws_data'],
     data () {
         return {
-            lblBookStatus : {
-                 wantToRead : "Por Leer" ,
-                 reading : "Leyendo" ,
-                 readed : "Leido" ,
-                 abandoned : "Abandonado" , 
-            },
             aBookStatus : [
                 { wantToRead : "Por Leer" },
                 { reading : "Leyendo" },
@@ -73,6 +67,11 @@ export default {
         }
     },
     methods : {
+        getBookStatus(status) {
+            let book = this.aBookStatus.find((b) => Object.keys(b) == status)
+            return Object.values(book).toString()
+
+        },
         aBooksStatusFiltered(status){
             return this.aBookStatus.filter( (e) => 
                 !e[status]
