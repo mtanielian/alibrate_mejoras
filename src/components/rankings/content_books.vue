@@ -39,9 +39,9 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">                        
                         <a v-for="(bStatus) in aBooksStatusFiltered(book.libraryItem.status)" 
-                            class="dropdown-item" style="cursor:pointer" :key="Object.values(bStatus)[0]"
+                            class="dropdown-item" style="cursor:pointer" :key="bStatus.id"
                         >
-                            {{Object.values(bStatus)[0]}}
+                            {{bStatus.lbl}}
                         </a>                        
                     </div>
                 </div>
@@ -59,24 +59,21 @@ export default {
     data () {
         return {
             aBookStatus : [
-                { wantToRead : "Por Leer" },
-                { reading : "Leyendo" },
-                { readed : "Leido" },
-                { abandoned : "Abandonado" },
+                { id : "wantToRead", lbl : "Por Leer" },
+                { id : "reading", lbl : "Leyendo" },
+                { id : "readed", lbl : "Leido" },
+                { id : "abandoned", lbl : "Abandonado" },
             ]
         }
     },
     methods : {
         getBookStatus(status) {
-            let book = this.aBookStatus.find((b) => Object.keys(b) == status)
-            return Object.values(book).toString()
+            let book = this.aBookStatus.find((b) => b.id == status)
+            return book.lbl
 
         },
-        aBooksStatusFiltered(status){
-            return this.aBookStatus.filter( (e) => 
-                !e[status]
-            )
-            
+        aBooksStatusFiltered(status) {
+            return this.aBookStatus.filter((b) =>  b.id != status)
         },
     }
 
