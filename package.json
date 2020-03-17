@@ -1,0 +1,50 @@
+{
+  "name": "alibrate_test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "jwt-decode": "^2.2.0",
+    "moment": "^2.24.0",
+    "vue": "^2.6.11",
+    "vue-concise-slider": "^3.4.4",
+    "vue-flickity": "^1.2.1",
+    "vue-router": "^3.1.5",
+    "vuex": "^3.1.3",
+    "vuex-persistedstate": "^2.7.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-eslint": "^4.2.0",
+    "@vue/cli-plugin-router": "^4.2.0",
+    "@vue/cli-service": "^4.2.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.1.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "rules": {},
+    "globals": {
+      "jQuery": true
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
