@@ -102,7 +102,7 @@ import axios from 'axios'
 import medalGold from '../../assets/images/medal-pos-1.svg'
 import medalBronze from '../../assets/images/medal-pos-2.svg'
 import medalSilver from '../../assets/images/medal-pos-3.svg'
-import loading from '../../assets/images/loading.gif'
+
 
 
 export default {
@@ -155,7 +155,6 @@ export default {
     },
     data() {
         return {
-            loading,
             medals : [
                 medalGold,
                 medalBronze,
